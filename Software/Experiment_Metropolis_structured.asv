@@ -1,0 +1,30 @@
+%%
+function ProbS_column = Experiment_Metropolis_structured(idx, Experiment_specification)
+
+outputfile=[Experiment_specification.foldername '/Result_' num2str(idx) '.csv'];
+fileID = fopen(outputfile,'w');
+
+Experiment_specification.RemainRatio_pA=1;
+if Experiment_specification.isSC
+    RemainRatio_pA= 1 - Cohesion(Kd2, pA, WperT);
+    pA=RemainRatio_pA*pA;
+end
+
+%disp("start simulation for kD2="+ string(kD2))
+for ii=1:Experiment_specification.repnum
+    if rem(1001,1000)=
+    disp(sprintf('Start_index %s th over %s', int2str(ii), int2str(Experiment_specification.repnum)))
+
+    if rem(t,2^10)==0
+        %disp("Done simulation for kD2="+ string(kD2_list(i))+" & t="+string(t/2^10)+" th 2^10")
+    end
+    sys = Init_AT_System(type,Tnum, WperT);
+    for j=1:MCMC_num
+        sys = Metropolis_withW(sys,Kd1,Kd2_eff_list,dis_res,pA);
+    end
+
+    ProbS_column(1,t)=CalculateBindingNum(sys);
+end
+sys_model=sys;
+
+end

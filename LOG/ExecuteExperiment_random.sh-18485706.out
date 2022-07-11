@@ -1,0 +1,49 @@
+/home/gridsan/jsong/MATLAB/220622_Antibody_JY
+d-5-6-1
+Thu Jun 23 20:21:38 EDT 2022
+jobID: 106
+CPUs per task: 2
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2020 The MathWorks, Inc.
+                  R2020a (9.8.0.1323502) 64-bit (glnxa64)
+                             February 25, 2020
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Experiment_specification = 
+  struct with fields:
+
+      filename: 'Experiment_0624_random_Figure6_062022_'
+    foldername: '/home/gridsan/jsong/MATLAB/220622_Antibody_JY/Data/Experiment_0624_random_Figure6_062022_'
+           Kd1: 1.0000e-08
+      Kd1_list: 1.0000e-08
+      Kd2_list: [1x40 double]
+            pA: 1.0000e-09
+          type: "randomQuasiSphere2D"
+Experiment_specification = 
+  struct with fields:
+
+          filename: 'Experiment_0624_random_Figure6_062022_'
+        foldername: '/home/gridsan/jsong/MATLAB/220622_Antibody_JY/Data/Experiment_0624_random_Figure6_062022_'
+               Kd1: 1.0000e-08
+          Kd1_list: 1.0000e-08
+          Kd2_list: [1x40 double]
+                pA: 1.0000e-09
+              type: "randomQuasiSphere2D"
+             WperT: 2
+              Wlen: 1
+              isSC: 0
+                 L: 50
+    BSdensity_list: [5 10 15 20]
+     D_Linker_list: 7
+         D_BS_list: [1 2 3 4 5 6 7 8 9 10 11 12]
+            disres: 0.0833
+     Amplification: [1x12 double]
+        MCMC_steps: 5
+     parametertype: ["Kd2_list"    "BSdensity_list"]
+    parameterlist1: [1x40 double]
+    parameterlist2: [5 10 15 20]
+               IDX: [160x2 double]
