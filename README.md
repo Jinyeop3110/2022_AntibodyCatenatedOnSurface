@@ -10,7 +10,7 @@ Immunoglobulin G (IgG) antibodies are widely used for diagnosis and therapy. Giv
 
 ## Workflow & file structure
 
-![img/fig1.png](img/fig1.png)
+![ReadmePic1.pdf](ReadmePic1.pdf)
 
 "Software" folder contains main codes for simulation
 
