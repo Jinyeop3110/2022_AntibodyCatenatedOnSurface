@@ -1,54 +1,42 @@
 # 2022_AntibodyCatenatedOnSurface
 
-Title: DeepIS : Deep-learning based three-dimensional label-free tracking and analysis of immunological synapses of CAR-T cells
+This is the source-code for the manuscript : Noncovalent antibody catenation on a target surface greatly increases the antigen-binding avidity
+Link : https://www.biorxiv.org/content/10.1101/2022.07.12.499671v1
 
-Authors: Moosung Lee, Young-Ho Lee, Jinyeop Song, Geon Kima, YoungJu Joa, HyunSeok Mine, Chan Hyuk Kimc, and YongKeun Park.
-
-Link: https://www.biorxiv.org/content/10.1101/539858v2
-
-This is the ReadMefor the DeepIS pipeline in the above paper. 
+Authors: Jinyeop Song, Bo-Seong Jeong, Seong-Woo Kim, Seong-Bin Im, Seonghoon Kim, Chih-Jen Lai, Wonki Cho, Jae U. Jung, Myung-Ju Ahn, Byung-Ha Oh
 
 ReadMe Author: Jinyeop Song
 
-## Overview
+## Overview(Abstract in the manuscript)
 
-### Workflow
+Immunoglobulin G (IgG) antibodies are widely used for diagnosis and therapy. Given the unique dimeric structure of IgG, we hypothesized that, by genetically fusing a homodimeric protein (catenator) to the C-terminus of IgG, reversible catenation of antibody molecules could be induced on a surface where target antigen molecules are abundant, and that it could be an effective way to greatly enhance the antigen-binding avidity. A thermodynamic simulation showed that quite low homodimerization affinity of a catenator, e.g. dissociation constant of 100 μM, can enhance nanomolar antigen-binding avidity to a picomolar level, and that the fold enhancement sharply depends on the density of the antigen. In a proof-of-concept experiment where antigen molecules are immobilized on a biosensor tip, the C-terminal fusion of a pair of weakly homodimerizing proteins to three different antibodies enhanced the antigen-binding avidity by at least 110 or 304 folds from the intrinsic binding avidity. Compared with the mother antibody, Obinutuzumab(Y101L) which targets CD20, the same antibody with fused catenators exhibited significantly enhanced binding to SU-DHL5 cells. Together, the homodimerization-induced antibody catenation would be a new powerful approach to improve antibody applications, including the detection of scarce biomarkers and targeted anticancer therapies.
+
+
+
+## Workflow & file structure
 
 ![img/fig1.png](img/fig1.png)
 
+"Software" folder contains main codes for simulation
 
-DeepIS is an DCNN supervised learning method to enable general, high-throughput, and automated segmentation for 3D Refractive Index(RI) tomograms. We applied this framework to perform Immunological Synnapse segmentation from raw 3D RI tomographic videos of immune response between CART19 and K562-CD19 cells. 
+## Usage 
 
-### Datset Preparation
+### Dependencies
+* Python >= 3.6
+* MATLAB
 
-The dataset is composed of 3D RI tomogram(input) and annotation of cell masks(label). To annotate the 3D masks of the CART19 and K562-CD19 cells, we first applied a combination of image processing and the watershed algorithm to a raw RI tomogram. Among the outcomes, 236 pairs of well-annotated 3D tomograms were finally chosen with consensus by three experts in cellular biology. The detailed procedure for dataset preparation is described in the manuscript. 
+### Operation
+Run main_DataGeneration.m to generate all data that is included in mansucript
+Run Experiment_Metropolis_random.m to generate data of randomly distributed antigen binding surface
+Run Experiment_Metropolis_structured.m to generate data of regularly distributed antigen binding surface
 
-### Model Architecture
+### Input parameters
+
+The input parameters
+
+### Output
 
 ![img/fig2.png](img/fig2.png)
 
-This deep neural network is implemented with pytorch. The architecture has the contracting path consisting of ResNet blocks and down-pooling layers and the expanding path consisting of convolutional layers and up-pooling layers. Features are passed from the contracting path and to the expanding path through global convolutional network (GCN) layers. The number of features for each level is 32, 64, 128, 256, 512 respectively.
-
-Input file and output file should be 128*128*64.
-
-## How to use
-
-### Dependencies
-* Tensorflow
-* Keras >= 1.0
-* Python >= 3.6
-* scikit-image >= 0.14.2
-
-
-### Run main_DeepIS.py
-
-Before running the main code, "fpath_input" and "fpath_ouput" variables must be set properly.
-
-    python3 main_DeepIS.py --feature_scale 1 --gpus 2,3 --test 1
-       
-### Results
-
-Use the trained model to do segmentation on test images, the result is statisfactory.
-
-![img/fig3.png](img/fig3.png)
+Output files is created in 
 
