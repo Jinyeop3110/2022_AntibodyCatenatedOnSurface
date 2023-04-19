@@ -29,15 +29,15 @@ Immunoglobulin G (IgG) antibodies are widely used for diagnosis and therapy. Giv
 
 For the single run : 
 
-Run main_DataGeneration.m to generate all data that is included in mansucript
+* Run main_DataGeneration.m to generate all data that is included in mansucript
 
-Run Experiment_Metropolis_random.m to generate data of randomly distributed antigen binding surface
+* Run Experiment_Metropolis_random.m to generate data of randomly distributed antigen binding surface
 
-Run Experiment_Metropolis_structured.m to generate data of regularly distributed antigen binding surface
+* Run Experiment_Metropolis_structured.m to generate data of regularly distributed antigen binding surface
 
 For the pararell run : 
 
-we used Slurm task manager to pararelly submit the task. In the main directories, .sh files are script for it.
+* we used Slurm task manager to pararelly submit the task. In the main directories, .sh files are script for it.
 
 ### Input parameters
 
