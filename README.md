@@ -10,7 +10,7 @@ Immunoglobulin G (IgG) antibodies are widely used for diagnosis and therapy. Giv
 
 ## Workflow & file structure
 
-![ReadmePic1.pdf](ReadmePic1.pdf)
+![ReadmePic1.png](ReadmePic1.png)
 
 "Software" folder contains main codes for simulation
 
@@ -45,7 +45,7 @@ For The input parameters you must specify effective catneation constant(Kd2_eff)
 
 ### Output
 
-![img/fig2.png](img/fig2.png)
+![ReadmePic2.png](ReadmePic2.png)
 
 Output files is created in the "Result" folder, which contains the simulation results in CSV format. These files include the simulated values of occupied binding site frequency over many replicates.
 
